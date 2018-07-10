@@ -10,6 +10,22 @@
  * @return {string[]}
  */
  // Accepted in 145ms
+
+ function TreeNode(val) {
+    this.val = val;
+    this.left = this.right = null;
+  }
+
+  var executeGetAllPaths = function(){    
+ var five = new TreeNode(5); 
+ var two = new TreeNode(2);
+ var one = new TreeNode(1);
+ var three = new TreeNode(3);
+ one.left = two;
+ one.right=three;
+ two.right = five;
+return binaryTreePaths(one);
+  };
 var binaryTreePaths = function(node) {
     var la=[];
  	var ra=[];

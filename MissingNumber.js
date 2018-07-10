@@ -10,7 +10,7 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
  * @return {number}
  */
  // Accepted in leetcode 99ms
-var missingNumber = function(nums) {
+var missingNumber1 = function(nums) {
     var n = nums.length;
     var total = n*(n+1)/2;
     var sum=0;
@@ -18,4 +18,25 @@ var missingNumber = function(nums) {
      sum+=nums[i];   
     }
     return total-sum;
+};
+
+var missingNumber = function(nums) {
+    nums.sort(function(a,b){return a-b;});
+    if(nums[0] != 0)
+        return 0;
+    //if(nums[nums.length-1] != nums.length)
+      //  return nums.length;
+   var low = 0;
+   var high = nums.length-1;
+    
+    while(low < high){
+        console.log(low +"   "+high);
+        var mid = Math.floor((low+high)/2);
+        console.log("mid is "+mid);
+        if(mid == nums[mid])
+            low = mid+1;
+        else
+            high = mid;
+    }
+    return low;
 };

@@ -10,39 +10,12 @@
  * @return {number}
  */
  //Accepted in 115ms
-var maxDepth = function(node) {
+var getHeight = function(node){
+    if(node == null) return 0;
     var lh;
-	var rh;
-	if(node!==null){
-	if(node.left===null && node.right===null) 
-		{
-			//map[JSON.stringify(node)]=0;
-			//console.log(node.val +" "+JSON.stringify(node));
-			return 1;
-		}}
-	if(node!==null)
-	{
-		if(node.left!==null)
-		{
-			lh=maxDepth(node.left); 
-		}
-		else
-		{
-			lh=1;
-		}
-		if(node.right!==null)
-		{
-			rh=maxDepth(node.right);			
-		}
-		else
-		{
-			rh=1;
-		}
-	}
-	else{
-	    return 0;
-	}
-//	map[JSON.stringify(node)]=1+Math.max(lh,rh);
-	//console.log(node.val +" "+JSON.stringify(node));
+	var rh;	
+	if(node.left===null && node.right===null) return 1;
+    lh = getHeight(node.left);
+    rh = getHeight(node.right);		
 	return 1+Math.max(lh,rh);
 };

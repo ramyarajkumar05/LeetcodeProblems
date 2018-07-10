@@ -7,7 +7,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
  * @return {number}
  */
  // Accepted in 98ms
-var singleNumber = function(nums) {
+var singleNumber1 = function(nums) {
     var map={};
     for(var i=0;i<nums.length;i++){
         if(map[nums[i]] == null)
@@ -21,3 +21,14 @@ var singleNumber = function(nums) {
     }
     
 };
+
+// O(n) time solution using XOR operator with O(1) space
+// A XOR A = 0 and also XOR is commutative. 
+var singleNumber= function(nums) {
+    var result = 0;
+    for (var i = 0; i<nums.length; i++)
+    {
+        result ^=nums[i];
+    }
+    return result;
+}

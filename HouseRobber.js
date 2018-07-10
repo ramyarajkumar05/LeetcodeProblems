@@ -57,3 +57,5 @@ var profit = function(a, k, map){
     if(map[k] == null) map[k] = Math.max(yes,no);
     return Math.max(yes,no);
 }
+
+module.exports = rob;

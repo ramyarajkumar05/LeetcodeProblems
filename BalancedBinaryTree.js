@@ -10,7 +10,7 @@
  * @return {boolean}
  */
  // Accepted in 142ms
- var map={};
+var map={};
 var isBalanced = function(node) {
 	var lh;
 	var rh;

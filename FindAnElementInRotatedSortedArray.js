@@ -16,16 +16,31 @@ var findMin = function(nums) {
 		var high=nums.length-1;
 
 		if(nums[low] < nums[high]) return nums[low];
-		while(low<high-1)
+		while(low<high)
 		{
 			var mid= Math.floor((low+high)/2);
 			if(nums[low] >nums[mid])
 				high = mid;
 			else
-				low=mid;
+				low=mid+1;
 		}
+		return nums[low];
+};
 
+// If there are duplicates in the array
+var findMin = function(nums) {
+  var low=0;
+		var high=nums.length-1;
 		if(nums[low] < nums[high]) return nums[low];
-		else
-			return nums[high];
+		while(low<high)
+		{
+			var mid= Math.floor((low+high)/2);
+			if(nums[high] >nums[mid])
+				high = mid;
+			else if(nums[high] <nums[mid])
+				low=mid+1;
+            else
+                high--; // Simply avoid the duplicate number
+		}
+			return nums[low];  
 };

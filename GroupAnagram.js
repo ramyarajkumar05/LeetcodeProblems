@@ -61,3 +61,4 @@ var groupAnagrams1 = function(strs) {
     console.log(resultArr[2]);
     return resultArr;
 }
+module.exports = groupAnagrams;
