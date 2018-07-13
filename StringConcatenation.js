@@ -1,4 +1,6 @@
-/*Given a set of strings, e.g. {“one”, “cat”, “two”, “four”}, and a target string, e.g. “fouroneone”, return true if the target string is composed (by concatenation) of elements from the set.   
+/*Given a set of strings, e.g. {“one”, “cat”, “two”, “four”}, and a target string, 
+e.g. “fouroneone”, return true if the target string is composed (by concatenation) of elements
+ from the set.   
 
 “four
 one
